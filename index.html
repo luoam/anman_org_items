@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!-- Loading Bootstrap -->
+    <link href="http://static.anman.org/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="http://www.anman.org/static/html5shiv/html5shiv.min.js"></script>
+    <script src="http://www.anman.org/static/respond/respond.min.js"></script>
+    <![endif]-->
+    <style>
+
+        body {
+            position: relative;
+            font-size:medium !important;
+        }
+        a{
+            color: #000;
+        }
+        a:link {color:#000;}		/* 未被访问的链接 */
+        a:visited {color:#000;}	/* 已被访问的链接 */
+        a:hover {color:#333;}	/* 鼠标指针移动到链接上 */
+        a:active {color:#000;}
+        .space10  { margin-top: 10px  !important;}
+        header{
+            margin-top: 0px;
+        }
+        .list-inline{
+            display: block;
+            padding: 5px 12px 5px;
+        }
+        .free_download {
+            background: #ffd633;;
+            font-size: 15px;
+            color: #fff;
+            padding: 14px 25px 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 400;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 -3px 0 0 rgba(10, 65, 107, 0.5) inset;
+            /*-webkit-transition-duration: 0.5s;
+            -webkit-transition-timing-function: linear;*/
+        }
+        .free_download:hover {
+            /*    box-shadow: 0 42px 0 0 rgba(10, 65, 107, 0.5) inset;*/
+            color: #fff;
+            background-color:#1278c7;
+        }
+        .radius-border{
+            border-radius:8px;
+            -webkit-border-radius:8px;
+            -moz-border-radius:8px;
+            border:1px solid #ccc;
+            padding:5px;
+            background:white
+        }
+        img{max-width:100%;}
+        .content-wrapper{
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+    </style>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://static.anman.org/static/jquery/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://static.anman.org/static/bootstrap/js/bootstrap.min.js"></script><meta name="keywords" content="团圆系统,失踪儿童信息平台,公安部儿童失踪信息紧急发布平台">
+    <meta name="description" content="公安部儿童失踪信息紧急发布平台">
+    <meta name="author" content="失踪儿童信息平台">
+    <title>基于星云链|失踪儿童信息平台|公安部儿童失踪信息紧急发布平台|安满</title>
+    <style type="text/css">
+
+        .wallet {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .send {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .err {
+            border-color: red;
+        }
+
+        .openfile {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid red;
+            display: block;
+            text-align: center
+        }
+    </style>
+    <script src="http://static.anman.org/static/bootstrap/js/bootbox.min.js"></script>
+    <script src="http://static.anman.org/static/bootstrap/js/nebulas.js"></script>
+    <script src="http://static.anman.org/static/bootstrap/js/echarts.common.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+    .navbar-toggle .icon-bar{
+        background-color: #000;
+    }
+</style>
+<!-- Static navbar -->
+<nav class="navbar navbar-static-top" style="margin-bottom:1px;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.anman.org/" title="公安部儿童失踪信息紧急发布平台"><b>失踪儿童信息平台</b></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://www.anman.org/"><b>公安部儿童失踪信息紧急发布平台</b></a></li>
+                <li><a href="http://www.anman.org//index/map"><b>全国失踪儿童分布地图</b></a></li>
+                <li><a href="http://www.anman.org/nebulas"><b>基于星云链</b></a></li>
+            </ul>
+            <div class="nav navbar-right">
+                <form class="navbar-form navbar-left" action="http://www.anman.org/index/search/" onsubmit="return asearch()">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" id="search" name="search" type="search" placeholder="">
+                            <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">搜索</button>
+          </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<script>
+    function asearch()
+    {
+        var search = $("#search").val();
+        if(search.length>0){
+            location.href = "http://www.anman.org/index/search/" + search;
+        }
+        return false;
+    }
+</script><section id="banner" style="margin-top:1px;padding-bottom: 0px;background-color: #6f5499; color: #fff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="text-align: center">
+                <h4>寻找，不放弃任何一丝希望</h4>
+                <h5 style="margin-bottom: 0px;">对接公安部儿童失踪信息紧急发布平台数据，搜集的拐卖犯罪线索将传递给全国各地一线打拐民警</h5>
+            </div>
+
+            <div class="col-sm-12" style="text-align: center">
+                <ul class="list-inline">
+                    <li class="space10">
+                        <a href="http://www.anman.org/index/juanzhu/" class="free_download">赞助</a>
+
+                    </li>
+                </ul>
+
+                <p class="space10">
+                    已找回<b style="font-size:50px;">2944</b>名儿童
+                    <br>
+                    <a style="color: #ffffff" href="http://www.anman.org/nebulas">基于星云链</a>:
+                    <a style="color: #ffffff" href="http://www.anman.org/nebulas/commit">统计指标上链</a>
+                    <a style="color: #ffffff" href="http://www.anman.org/nebulas/upNebulasChain">失踪儿童上链</a>
+                    <a style="color: #ffffff" href="http://www.anman.org/nebulas/regvolunteer">登记为志愿者</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Children" style="margin-top:10px;padding-bottom: 10px;">
+    <div class="container">
+        <div class="row">
+            <div id="ec" class="col-sm-12">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="fade loading modal" data-backdrop=static>
+    <div class=modal-dialog>
+        <div class=modal-content>
+            <div class=modal-body>
+                <div class=progress>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role=progressbar
+                         style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    "use strict";
+    var nebulas = require("nebulas"),
+        Account = nebulas.Account,
+        Utils = nebulas.Utils,
+        neb = new nebulas.Neb(),
+        globalParams = {
+            account: null,
+            selectedFile: null,
+            name: null
+        };
+    //Testnet:
+    // var ContractAddress = "n1k1VxkXdscJEu2gHmKrUa7sscLB3dJcRTA";
+    // var chainId = "1001";
+    // var initAddress = "n1LRdxLWijiqci8zTF72o84y7npUBrizp8a";
+    // neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+
+    //Mainnet:
+    var ContractAddress ="n1pkQACWdGSUKLHy6bz1RhzWZgWn8RsA3mk";
+    var chainId = "1";
+    var initAddress = "n1Lvduf7mV6NBXwi43ahP3RqRKrnp6jHa8D";
+    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
+    var Amount = 0;
+    $("#toaddress").val(ContractAddress);
+    $("#amount").val(Amount);
+    $(document).ready(function () {
+        initCall(function (params) {
+            console.log(params);
+            neb.api
+                .call({
+                    from: params.from,
+                    to: params.to,
+                    value: params.value,
+                    nonce: params.nonce,
+                    gasPrice: params.gasPrice,
+                    gasLimit: params.gasLimit,
+                    contract: params.contract
+                })
+                .then(function (resp) {
+                    console.log("aaa");
+                    let arr = JSON.parse(resp.result);
+                    console.log(arr);
+                    if (arr.length > 0) {
+                        for (let i = arr.length - 1; i >= 0; i--) {
+                            let item = arr[i];
+                            console.log(item.name);
+
+                            let str = "<article style=\"border-bottom: 1px solid #ddd\">\n" +
+                                "                                    <h4><a href=\"http://www.anman.org/index/baobei/" + item.itemid + "\"\n" +
+                                "                                           style=\"overflow:hidden;\">\n" +
+                                "                                            <b>" + item.name + "</b>\n" +
+                                "                                            </a>\n" +
+                                "                                    </h4>\n" +
+                                "                                    <p class=\"text-left\">\n" +
+                                "                                        走失位置:" + item.misslocation + "<br/>\n" +
+                                "                                        走失时间:" + item.misstime + "<br/>\n" +
+                                "                                        详细描述:" + item.detail + "\n" +
+                                "                                    </p>\n" +
+                                "                                </article>";
+                            $("#ec").append(str);
+
+
+                        }
+                    }
+
+
+                    if (resp.execute_err && resp.execute_err !== "") {
+                        console.log(resp.execute_err);
+                    } else {
+                    }
+                })
+                .catch(function (err) {
+                    console.log(JSON.stringify(err));
+                });
+        });
+
+    });
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "H+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+
+    var initCall = function (callback) {
+        var params = {};
+
+        params.from = initAddress;
+        params.to = ContractAddress;
+        params.gasLimit = Utils.toBigNumber("200000").toNumber();
+        params.gasPrice = Utils.toBigNumber("1000000").toNumber();
+
+        // prepare value
+        let value = Utils.toBigNumber(0);
+        params.value = value;
+
+        // prepare contract
+
+        var args = "[1000,0]";
+        params.contract = {
+            "function": "GetChildItems",
+            "args": args
+        };
+
+        // prepare nonce
+        // needs refresh data on every 'test' and 'commit' call, because data update may slow,
+        // you can get different result by hit 'test' multiple times
+        neb.api.getAccountState(params.from).then(function (resp) {
+            var balance = nebulas.Unit.fromBasic(resp.balance, "nas");
+            params.nonce = parseInt(resp.nonce) + 1;
+            callback(params);
+        }).catch(function (err) {
+            // console.log("prepare nonce error: " + err);
+            bootbox.dialog({
+                backdrop: true,
+                onEscape: true,
+                message: err.message,
+                size: "large",
+                title: "Error"
+            });
+        });
+    };
+</script>
+<footer class="bg-fff ">
+    <div class="container-fluid" style="border-top: 1px solid #ddd">
+        <div class="row">
+            <div class="col-xs-12 text-center" >
+                <h4 class="footer-title">Copyright © 2017-2050 <a href="http://www.anman.org/">失踪儿童信息平台</a>. <a href="http://www.miibeian.gov.cn/">浙ICP备14037650号</a>
+                </h4>
+                <p><a href='#'>Go Top</a></p>
+            </div>
+        </div>
+    </div>
+
+</footer></body>
+</html>
