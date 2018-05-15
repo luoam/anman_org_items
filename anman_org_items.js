@@ -569,7 +569,7 @@ AnmanNasContract.prototype = {
             if (itemid.length > 40 || name.length > 20) {
                 throw new Error("字段长度超出限制！")
             }
-            if (this.ItemsMap.get(itemid)) {
+            if (this.ClosedItemsMap.get(itemid)) {
                 throw new Error("该失踪儿童信息已经存在！");//itemid已经存在
             } else {
                 let ChildrenItem = new ChildItem();
