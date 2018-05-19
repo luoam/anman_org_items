@@ -1,6 +1,9 @@
 # anman_org_items
 将失踪儿童的信息存上星云链
 
+项目介绍：[whitepaper.md](whitepaper.md)
+404公益计划：[404_plan.md](404_plan.md)
+    
 ### 功能介绍
  1. 预设超级管理员
  2. 注册志愿者
